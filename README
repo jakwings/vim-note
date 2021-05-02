@@ -1,0 +1,35 @@
+# USAGE
+
+*   Set the filetype of text files to "note" automatically:
+
+        autocmd BufRead,BufNewFile *.txt setf note
+        autocmd FileType text setf note
+
+*   Manually change the filetype anytime:
+
+        setlocal filetype=note textwidth=72
+
+*   Add a ruler to indicate &textwidth and trailing spaces in any window:
+
+        call note#RulerToggle(1)
+
+    and clean-up:
+
+        call note#RulerToggle(0)
+
+    or switch on or off according to the current state:
+
+        call note#RulerToggle()
+
+*   Set filetype automatically if it is undefined:
+
+        autocmd FileType none setf note
+
+*   You can customize options &include and &path for convenience. E.g.
+
+        autocmd FileType note setlocal path=.,,
+        autocmd FileType note setlocal include=^\\s*#\\s*include\\>
+
+*   These labels in comments are highlighted:
+
+        TODO IDEA FIXME ISSUE NOTE ALERT WTF XXX
