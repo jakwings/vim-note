@@ -52,7 +52,6 @@ function! s:Cleanup()
     unlet w:note_ruled
 
     autocmd! note * <buffer>
-    augroup! note
 
     call s:ShowRuler(0)
     call s:ShowTrailingSpace(0)
